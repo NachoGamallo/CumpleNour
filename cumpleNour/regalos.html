@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Suministros para Nour</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <header class="twd-header">
+        <h1 class="logo-text">THE WALKING <span class="highlight">NOUR</span></h1>
+        <div class="hero-image">
+            <img src="img/best-most-iconic-hard-hitting-rick-grimes-quote-v0-o465ef4om7gc1.webp" alt="Rick Grimes" class="rick-img">
+        </div>
+        <p class="subtitle">ZONA SEGURA: SUMINISTROS DE CUMPLEAÑOS</p>
+    </header>
+
+    <main>
+        <div id="grid" class="boxes-container">
+            </div>
+        
+        <br>
+        <button class="btn-main" onclick="location.href='index.html'">RETIRADA (INICIO)</button>
+    </main>
+
+    <div id="overlay">
+        <div class="modal-content">
+            <h2 id="modal-title">ENCRIPTADO</h2>
+            
+            <div id="game-area">
+                <p class="clue-text" id="pista-texto">...</p>
+                <input type="text" id="user-input" placeholder="INGRESE CÓDIGO...">
+                <button class="btn-action" onclick="validar()">DESBLOQUEAR</button>
+                <p id="msg"></p>
+            </div>
+
+            <div id="result-area" style="display:none;">
+                <p class="result-big" id="result-text" style="font-size: 1.5rem; margin: 20px 0;"></p>
+            </div>
+
+            <button id="btn-volver-modal" class="btn-secondary" onclick="cerrarModal()">VOLVER</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

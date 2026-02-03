@@ -1,0 +1,214 @@
+:root {
+    --blood: #8a0b0b;
+    --dark: #0f0f0f;
+    --text: #dcdcdc;
+    --dirty-paper: #d8cba8;
+}
+
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: var(--text);
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+/* Fondo con textura suciedad */
+.bg-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('img/index/backgroundIndex.jpeg'), 
+                linear-gradient(to bottom, #1a1a1a, #000);
+    z-index: -1;
+}
+
+/* HEADER CON RICK */
+.twd-header {
+    text-align: center;
+    padding-top: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    border-bottom: 2px solid var(--blood);
+    margin-bottom: 40px;
+}
+
+.logo-text {
+    font-family: 'Creepster', cursive; /* Fuente TWD */
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 0px #000;
+}
+
+.highlight { color: var(--blood); }
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    margin-top: -10px;
+}
+
+.hero-image {
+    height: 250px; /* Ajusta según tu foto */
+    overflow: hidden;
+    margin-top: -20px;
+    position: relative;
+    z-index: -1;
+}
+
+.rick-img {
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.2) sepia(0.3);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* CAJAS DE SUMINISTROS */
+.boxes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.box {
+    width: 160px;
+    height: 160px;
+    background: #222;
+    border: 4px solid #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+/* Efecto de suciedad en las cajas */
+.box::after {
+    content: '';
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background-image: url('https://www.transparenttextures.com/patterns/black-felt.png');
+    opacity: 0.4;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    border-color: var(--blood);
+}
+
+.box.success { border-color: #556B2F; color: #8FBC8F; box-shadow: 0 0 15px #556B2F; }
+.box.failed { border-color: #DAA520; color: #DAA520; opacity: 0.7; }
+
+/* MODAL / POPUP */
+#overlay {
+    display: none;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 100;
+    justify-content: center; align-items: center;
+}
+
+.modal-content {
+    background: #151515;
+    border: 2px solid var(--blood);
+    padding: 30px;
+    width: 90%; max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 30px var(--blood);
+    position: relative;
+}
+
+.modal-content::before {
+    content: "TOP SECRET";
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    background: #000; padding: 0 10px; color: var(--blood); font-weight: bold;
+}
+
+input {
+    background: #000;
+    border: 1px solid #555;
+    color: white;
+    padding: 10px;
+    width: 80%;
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 15px ;
+}
+
+/* BOTONES */
+.btn-main, .btn-action, .btn-secondary {
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.btn-main { background: var(--blood); color: white; font-size: 1.2rem; margin-top: 30px; }
+.btn-action { background: #333; color: white; border: 1px solid white; display: block; margin: 10px auto; }
+.btn-action:hover { background: white; color: black; }
+.btn-secondary { background: transparent; color: #777; border: 1px solid #777; margin-top: 20px; }
+.btn-secondary:hover { border-color: white; color: white; }
+
+/* Estilos para el Index y Carta */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.rick-img-small {
+    height: 180px;
+    filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
+}
+
+.file-paper {
+    background: #d8cba8; /* Color papel viejo */
+    color: #222;
+    padding: 40px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+    border: 1px solid #b5a478;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.letter-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 20px 0;
+    white-space: pre-wrap;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px 10px 25px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    transform: rotate(-3deg);
+}
+
+.polaroid img { width: 150px; height: 150px; object-fit: cover; }
+.polaroid p { margin: 10px 0 0 0; color: #444; font-size: 0.8rem; }
+.rotate-right { transform: rotate(3deg); }
+
+.photo-album {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
